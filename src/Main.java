@@ -1,18 +1,7 @@
-import AbstractClassExample.Audi;
-import ConstructorExample.Calculation;
-import JavaClassesExamples.Bike;
-import JavaClassesExamples.ConcreteClassExampleCar;
-import JavaClassesExamples.Truck;
-import NestedClassExample.OuterNestedClassExample;
-import NestedClassExample.StaticNestedClassExample;
-import ReflectionClassExample.ReflectionClassEagle;
-import ReflectionClassExample.ReflectionClassExampleOne;
+import AnnontationExample.*;
 import ReflectionClassExample.ReflectionClassExampleTwo;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -74,7 +63,7 @@ public class Main {
 //        Method flyMethod = reflectionClassEagleOne.getMethod("fly", int.class, boolean.class, String.class);
 //        flyMethod.invoke(reflectionClassEagleObject, 1,true,"hello");
 
-        Class reflectionClassEagleTwo = ReflectionClassExampleTwo.class;
+//        Class reflectionClassEagleTwo = ReflectionClassExampleTwo.class;
 
         //Get public fields with this
 //        Field[] fields = reflectionClassEagleTwo.getFields();
@@ -94,10 +83,25 @@ public class Main {
 //            System.out.println("*********");
 //        }
 
-        ReflectionClassExampleTwo reflectionClassExampleTwoObj  =  new ReflectionClassExampleTwo();
-        Field field = reflectionClassEagleTwo.getDeclaredField("breed");
-        field.set(reflectionClassExampleTwoObj, "eagleBrownBreed");
-        System.out.println(reflectionClassExampleTwoObj.breed);
+//        ReflectionClassExampleTwo reflectionClassExampleTwoObj  =  new ReflectionClassExampleTwo();
+//        Field field = reflectionClassEagleTwo.getDeclaredField("breed");
+//        field.set(reflectionClassExampleTwoObj, "eagleBrownBreed");
+//        System.out.println(reflectionClassExampleTwoObj.breed);
+
+//        DeprecatedExampleMobile deprecatedExampleMobile = new DeprecatedExampleMobile();
+//        deprecatedExampleMobile.dummyMethod();
+
+//        OverrideExampleEagle overrideExampleEagle = new OverrideExampleEagle();
+//        overrideExampleEagle.fly();
+
+//        System.out.println(ParentTestClass.class.getAnnotation(MyCustomAnnontationWithInherited.class));
+
+//        System.out.println(ChildTestClass.class.getAnnotation(MyCustomAnnontationWithInherited.class));
+
+        Category[] categoryAnnotationArray = Eagle.class.getAnnotationsByType(Category.class);
+        for(Category annontation: categoryAnnotationArray) {
+            System.out.println(annontation.name());
+        }
 
     }
 }

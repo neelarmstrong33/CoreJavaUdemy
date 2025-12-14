@@ -1,7 +1,11 @@
 import AnnontationExample.*;
+import GenericClassExample.*;
+import NestedClassExample.LocalInnerClassExample;
+import NestedClassExample.UsingAccessModifierExample;
 import ReflectionClassExample.ReflectionClassExampleTwo;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Objects;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -98,10 +102,46 @@ public class Main {
 
 //        System.out.println(ChildTestClass.class.getAnnotation(MyCustomAnnontationWithInherited.class));
 
-        Category[] categoryAnnotationArray = Eagle.class.getAnnotationsByType(Category.class);
-        for(Category annontation: categoryAnnotationArray) {
-            System.out.println(annontation.name());
-        }
+//        Category[] categoryAnnotationArray = Eagle.class.getAnnotationsByType(Category.class);
+//        for(Category annontation: categoryAnnotationArray) {
+//            System.out.println(annontation.name());
+//        }
 
+//        UsingAccessModifierExample usingAccessModifierExample = new UsingAccessModifierExample();
+//        usingAccessModifierExample.display();
+
+//        LocalInnerClassExample localInnerClassExample = new LocalInnerClassExample();
+//        localInnerClassExample.display();
+
+//        GenricClassExamplePrint genricClassExamplePrintObj = new GenricClassExamplePrint();
+//        genricClassExamplePrintObj.setPrintValue(1);
+//        Object printValue = genricClassExamplePrintObj.getPrintValue();
+//        //We cannot use printValue directly, we have to typecast it, else it will be compile time error
+//        if((int)printValue == 1) {
+//        }
+
+//        GenericClassExamplePrintOne<Integer> genericClassExamplePrintOneObj1 = new GenericClassExamplePrintOne<Integer>();
+//        genericClassExamplePrintOneObj1.setPrintValue(1);
+//        Integer printValue = genericClassExamplePrintOneObj1.getPrintValue();
+//        if(printValue == 1) {
+//            System.out.println(printValue);
+//        }
+
+//        ColorPrint colorPrintObj = new ColorPrint();
+//        colorPrintObj.setPrintValue("2");
+//        String printValue = colorPrintObj.getPrintValue();
+//        if(Objects.equals(printValue, "2")) {
+//            System.out.println(printValue);
+//        }
+
+//        ColorPrintOne<String> colorPrintObj = new ColorPrintOne<>();
+//        colorPrintObj.setPrintValue("2");
+//        String printValue = colorPrintObj.getPrintValue();
+//        if(Objects.equals(printValue, "2")) {
+//            System.out.println(printValue);
+//        }
+
+        GenericPairExample<String, Integer> genericPairExampleObj = new GenericPairExample<>();
+        genericPairExampleObj.put("Hello", 1234);
     }
 }

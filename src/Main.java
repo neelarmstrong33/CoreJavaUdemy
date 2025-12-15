@@ -5,6 +5,8 @@ import NestedClassExample.UsingAccessModifierExample;
 import ReflectionClassExample.ReflectionClassExampleTwo;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -141,7 +143,43 @@ public class Main {
 //            System.out.println(printValue);
 //        }
 
-        GenericPairExample<String, Integer> genericPairExampleObj = new GenericPairExample<>();
-        genericPairExampleObj.put("Hello", 1234);
+//        GenericPairExample<String, Integer> genericPairExampleObj = new GenericPairExample<>();
+//        genericPairExampleObj.put("Hello", 1234);
+
+//        RawTypeGenericExample<String> rawTypeGenericExampleObj = new RawTypeGenericExample<>();
+//        //Internally it passes Object as parametrized;
+//        RawTypeGenericExample rawTypeGenericExample = new RawTypeGenericExample();
+//        rawTypeGenericExample.setPrintValue(1);
+//        rawTypeGenericExample.setPrintValue("hello");
+
+        List<Vehicle> vehicleList = new ArrayList<>();
+        vehicleList.add(new Bus());
+        vehicleList.add(new Car());
+
+        List<Bus> busList = new ArrayList<>();
+
+        /*
+        List<Bus> busList = new ArrayList<>();
+        vehicleList =busList; //No
+        busList = vehicleList; //No
+         */
+
+        /*
+        Vehicle vehicleObj = new Vehicle();
+        Bus busObj = new Bus();
+
+        vehicleObj = busObj; //ok
+        */
+
+        Print printObj = new Print();
+        List<Object> objList = new ArrayList<>();
+//        printObj.setPrintValues(busList);
+        printObj.setPrintValues(objList);
+        printObj.setPrintValues(vehicleList);
+
+        
+
+
+
     }
 }
